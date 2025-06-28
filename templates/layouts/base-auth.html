@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% include "includes/head.html" %}
+  {% block extrastyle %}{% endblock extrastyle %}
+</head>
+
+<body class="dark-version">
+  <div class="container position-sticky z-index-sticky top-0">
+    <div class="row">
+      <div class="col-12">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg blur blur-rounded top-0 z-index-3 shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
+          <div class="container-fluid pe-0">
+            <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3" href="{% url 'index' %}">
+              HOME
+            </a>
+            <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation"
+              aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon mt-2">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navigation">
+              <ul class="navbar-nav mx-auto ms-xl-auto me-xl-7">
+                <li class="nav-item"></li>
+                <li class="nav-item"></li>
+                <li class="nav-item">
+                  <a class="nav-link me-2" href="{% url 'register' %}">Contato</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link me-2" href="{% url 'login' %}">Links</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link me-2" href="{% url 'login' %}">Sobre Nós</a>
+                </li>
+              </ul>
+              <ul class="navbar-nav d-lg-block d-none">
+                <li class="nav-item">
+                  <a href="https://app-generator.dev/product/soft-ui-dashboard/django/"
+                     class="btn btn-sm btn-round mb-0 me-1 bg-gradient-dark">Download</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- End Navbar -->
+      </div>
+    </div>
+  </div>
+
+  {% block content %}{% endblock content %}
+
+  <footer class="footer py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mb-4 mx-auto text-center">
+        <div class="col-lg-8 mx-auto text-center mb-4 mt-2">
+          <a href="javascript:;" class="text-secondary me-xl-4 me-4"><span class="text-lg fab fa-dribbble"></span></a>
+          <a href="javascript:;" class="text-secondary me-xl-4 me-4"><span class="text-lg fab fa-twitter"></span></a>
+          <a href="javascript:;" class="text-secondary me-xl-4 me-4"><span class="text-lg fab fa-instagram"></span></a>
+          <a href="javascript:;" class="text-secondary me-xl-4 me-4"><span class="text-lg fab fa-pinterest"></span></a>
+          <a href="javascript:;" class="text-secondary me-xl-4 me-4"><span class="text-lg fab fa-github"></span></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-8 mx-auto text-center mt-1">
+          <p class="mb-0 text-secondary">
+            &copy; PRESSIO coded by "Borealis" IO-EVO.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  {% include "includes/scripts.html" %}
+
+  <!-- força o tema escuro assim que o DOM estiver pronto -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof darkMode === 'function') {
+        darkMode({
+          getAttribute: () => null,  // faz darkMode entender que ainda não está “checked”
+          setAttribute: () => {}     // evita erro quando tenta setAttribute
+        });
+      }
+    });
+  </script>
+
+  {% block extra_js %}{% endblock extra_js %}
+</body>
+
+</html>

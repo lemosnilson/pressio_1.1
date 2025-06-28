@@ -1,0 +1,32 @@
+{% load static %}
+
+<!--   Core JS Files   -->
+<script src="{% static 'assets/js/core/popper.min.js' %}"></script>
+<script src="{% static 'assets/js/core/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/js/plugins/perfect-scrollbar.min.js' %}"></script>
+<script src="{% static 'assets/js/plugins/smooth-scrollbar.min.js' %}"></script>
+
+<script>
+  var win = navigator.platform.indexOf('Win') > -1;
+  if (win && document.querySelector('#sidenav-scrollbar')) {
+    Scrollbar.init(document.querySelector('#sidenav-scrollbar'), { damping: '0.5' });
+  }
+</script>
+
+<!-- Github buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- Control Center for Soft Dashboard -->
+<script src="{% static 'assets/js/soft-ui-dashboard.min.js' %}?v=1.1.0"></script>
+
+<!-- Força o tema escuro logo após o JS do template carregar -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (typeof darkMode === 'function') {
+      darkMode({
+        getAttribute: () => null,   // finge não haver "checked"
+        setAttribute: () => {}      // evita erro na tentativa de setAttribute
+      });
+    }
+  });
+</script>
