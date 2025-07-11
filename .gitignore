@@ -1,16 +1,30 @@
+# Arquivos de Cache do Python
+__pycache__/
 *.pyc
-*.DS_Store
-*.egg*
-/dist/
-/.idea
-/docs/_build/
-/node_modules/
-build/
-env
-/staticfiles/
 
-#src
-#*.sqlite*
+# Banco de dados local
+db.sqlite3
+/db.sqlite3
 
-#.env
-node_modules
+# Pasta de ambiente virtual (ex: venv, env)
+venv/
+env/
+
+# Arquivos de configuração de IDEs
+.vscode/
+.idea/
+
+# Arquivos de dependências do Python
+*.egg-info/
+pip-wheel-metadata/
+
+# Arquivos de sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de mídia enviados pelos usuários
+media/
+
+# Arquivos de variáveis de ambiente (onde você DEVE guardar chaves secretas)
+.env
+*.env
