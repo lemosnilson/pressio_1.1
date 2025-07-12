@@ -2,6 +2,9 @@
 {% load static %}
 
 {% block extrastyle %}
+<!-- Adicionando a biblioteca de ícones Font Awesome para os botões -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <style>
     .card-result {
         background-color: #202940;
@@ -165,6 +168,27 @@
             </div>
         </div>
     </div>
+
+    <!-- =============================================== -->
+    <!--      INÍCIO DA NOVA SEÇÃO DE BOTÕES             -->
+    <!-- =============================================== -->
+    <div class="row mt-5">
+        <div class="col-12 d-flex justify-content-center">
+            <!-- Botão 1: Começar de Novo -->
+            <a href="{% url 'insercao' %}" class="btn bg-gradient-info mx-2">
+                <i class="fas fa-redo-alt me-2"></i> Começar de Novo
+            </a>
+            
+            <!-- Botão 2: Sair -->
+            <a href="{% url 'logout' %}" class="btn btn-outline-light mx-2">
+                <i class="fas fa-sign-out-alt me-2"></i> Sair
+            </a>
+        </div>
+    </div>
+    <!-- =============================================== -->
+    <!--       FIM DA NOVA SEÇÃO DE BOTÕES               -->
+    <!-- =============================================== -->
+
 </div>
 {% comment %} Fim do container-fluid que estava dentro da main {% endcomment %}
 
