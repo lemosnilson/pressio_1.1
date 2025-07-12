@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'Super_Secr3t_9999')
 DEBUG = str2bool(os.environ.get('DEBUG'))
 #print(' DEBUG -> ' + str(DEBUG) ) 
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['lemosnilson.pythonanywhere.com']
 
 CSRF_TRUSTED_ORIGINS = ['http://localhost:8000', 'http://localhost:5085', 'http://127.0.0.1:8000', 'http://127.0.0.1:5085']
 
