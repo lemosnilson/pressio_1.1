@@ -134,7 +134,8 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': 'db.sqlite3',
+            # A linha abaixo foi alterada para o caminho absoluto
+            'NAME': '/home/lemosnilson/pressio/db.sqlite3',
         }
     }
 
