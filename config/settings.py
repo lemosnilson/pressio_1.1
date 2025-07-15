@@ -135,7 +135,7 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             # A linha abaixo foi alterada para o caminho absoluto
-            'NAME': '/home/lemosnilson/pressio/db.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
 
